@@ -1,0 +1,79 @@
+@import '/styles/vars';
+@import '/styles/button';
+@import '/styles/input';
+
+.c_list {
+  display: grid;
+  gap: $gap;
+  border: solid 1px white;
+  padding: $pad;
+
+  h3 {
+    margin: 0;
+  }
+
+  nav {
+    display: grid;
+    justify-items: right;
+    white-space: nowrap;
+    gap: $gap;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (min-width: 769px) {
+      grid-template-columns: auto min-content;
+    }
+
+    form {
+      display: grid;
+      gap: $gap;
+      grid-template-columns: auto min-content;
+    }
+
+    @include buttonStandar;
+    @include inputStandar;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: black;
+    text-align: center;
+
+    div:not(.head):nth-child(8n + 1),
+    div:not(.head):nth-child(8n + 2),
+    div:not(.head):nth-child(8n + 3),
+    div:not(.head):nth-child(8n + 4) {
+      background: white;
+    }
+
+    .head {
+      background: #cccccc;
+      padding: $pad;
+    }
+
+    .body {
+      background: #eeeeee;
+      padding: $pad;
+      display: grid;
+      align-items: center;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $pad;
+
+      @include buttonStandar;
+    }
+  }
+
+  .edit {
+    display: grid;
+    gap: $gap;
+    border: solid 1px white;
+    padding: $pad;
+
+    @include inputStandar;
+    @include buttonStandar;
+  }
+}

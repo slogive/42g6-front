@@ -1,0 +1,79 @@
+@import '/styles/vars';
+
+@mixin buttonStandar($type: 'standar', $width: auto, $height: min-content, $whiteSpace: false, $align: center) {
+  button {
+    border-radius: $radius;
+    outline: none;
+    border: none;
+    padding: $pad;
+    height: $height;
+    align-self: $align;
+    transition: all $time ease-in-out;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.33);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.33);
+    width: $width;
+
+    &[data-status='save'] {
+      background-color: rgba(103, 160, 63, 1);
+    }
+
+    &[data-status='delete'] {
+      background-color: rgba(243, 55, 26, 1);
+    }
+
+    &[data-status='enabled'] {
+      background-color: rgba(103, 160, 63, 1);
+    }
+
+    // &[data-status='disabled'] {
+    //   background-color: $color_light_gray;
+    // }
+
+    &[data-nowrap] {
+      white-space: nowrap;
+    }
+
+    @if $whiteSpace {
+      white-space: nowrap;
+    }
+
+    @if $type == 'edit' {
+      background-color: rgba(242, 175, 58, 1);
+    }
+
+    @if $type == 'cancel' {
+      background-color: rgba(243, 55, 26, 1);
+    }
+
+    @if $type == 'delete' {
+      background-color: rgba(243, 55, 26, 1);
+    }
+
+    @if $type == 'save' {
+      background-color: rgba(103, 160, 63, 1);
+    }
+
+    @if $type == 'view' {
+      background-color: rgba(45, 125, 188, 1);
+    }
+
+    @if $type == 'standar' {
+      // background-color: $c_standar;
+    }
+
+    // &[disabled] {
+    //   background-color: $color_light_gray;
+    // }
+
+    // &:hover:not([disabled]) {
+    //   background: $c_standar_hover;
+
+    //   cursor: pointer;
+    // }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

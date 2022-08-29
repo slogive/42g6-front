@@ -1,0 +1,10 @@
+@import '/styles/vars';
+
+@mixin inputStandar($type: 'standar', $width: auto, $height: min-content, $whiteSpace: false, $align: center) {
+  input {
+    border-radius: $radius;
+    padding: $pad;
+    border: none;
+    outline: none;
+  }
+}
